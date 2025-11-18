@@ -1,0 +1,8 @@
+rustc
+
+cargo init .
+
+# run a specific file
+cargo run --bin [file name]
+
+run `cargo fmt` to format code

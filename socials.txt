@@ -1,0 +1,7 @@
+install rust
+check versions
+create a new cargo init
+ignore some warnings
+run a specific file
+print statement
+`cargo fmt` to format code
