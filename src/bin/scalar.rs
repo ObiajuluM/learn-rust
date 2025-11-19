@@ -45,7 +45,14 @@ fn main() {
     let max_char: char = char::MAX;
     println!("Min char: {}, Max char: {}", min_char, max_char);
 
-    // Overflows
-    let u: u32 = u32::MAX;
-    // let overflowed = u + 1; // this will cause a compile-time error
+    // Overflows / this will cause a compile-time error, in release mode it will wrap around to 0
+    let mut u: u32 = u32::MAX;
+    u += 1; // this will cause a compile-time error, in release mode it will wrap around to 0
+    println!("Overflowed value: {}", u);
+    // checking add - returns some(x) | None
+    let u = u32::checked_add(u32::MAX, 1); // returns None
+    println!("Checked add result: {:?}", u);
+    // wrapping add
+    let u = u32::wrapping_add(u32::MAX, 1); // wraps around to 0
+    println!("Wrapped add result: {:?}", u);
 }

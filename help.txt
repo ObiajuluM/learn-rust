@@ -3,6 +3,6 @@ rustc
 cargo init .
 
 # run a specific file
-cargo run --bin [file name]
+cargo run --bin [file name] --[release]
 
 run `cargo fmt` to format code
