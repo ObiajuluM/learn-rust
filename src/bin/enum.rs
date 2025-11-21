@@ -1,7 +1,5 @@
 #![allow(unused)] // make to ignore some warnings
 
-use std::arch::x86_64::_SIDD_MASKED_POSITIVE_POLARITY;
-
 // enum for color
 #[derive(Debug, PartialEq)] // auto generate code to debug print enum variants, parialeq is to be able to compare enum variants
 
@@ -33,13 +31,14 @@ fn main() {
     println!("{}", Color::Red == Color::Red); // true
     println!("{}", Color::Red == Color::Green); // true
 
-    // Option -  enum that can either be Some(value) or None
-    let some_number: Option<i32> = Some(10);
-    let no_number: Option<i32> = None;
-    match some_number {
-        Some(value) => println!("The number is: {}", value),
-        None => println!("No number"),
-    };
+    // Option -  an enum that can either be Some(value) or None
+    let x: Option<i32> = None;
+    let x: Option<i32> = Some(-10);
+    println!("Option enum example {:?}", x);
 
-    // Result
+    // Result - represents either success (Ok) or failure (Err)
+    // retuns a value of type T on success or an error of type E on failure
+    let res: Result<u32, String> = Ok(5);
+    let res: Result<u32, String> = Err(String::from("An error occurred Div by 0"));
+    println!("Result enum example {:?}", res);
 }
